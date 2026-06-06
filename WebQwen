@@ -533,8 +533,13 @@
             <div>
                 <h4 class="uppercase tracking-widest text-xs font-bold mb-6 text-tukasa-clay">Contacto</h4>
                 <ul class="space-y-3 text-sm text-gray-300">
-                    <li><i class="fas fa-map-marker-alt mr-2 text-tukasa-teal"></i> Jr. Libertad 123, Ayacucho</li>
-                    <li><i class="fas fa-phone mr-2 text-tukasa-teal"></i> +51 999 888 777</li>
+                    <li>
+                         <a href="https://www.google.com/maps/search/?api=1&query=Jr.+Libertad+938+Ayacucho" target="_blank" class="hover:text-white transition flex items-center">
+                            <i class="fas fa-map-marker-alt mr-2 text-tukasa-teal"></i> 
+                            Jr. Libertad 938, Ayacucho
+                         </a>
+                    </li>
+                    <li><i class="fas fa-phone mr-2 text-tukasa-teal"></i> +51 999 636 537</li>
                     <li><i class="fas fa-envelope mr-2 text-tukasa-teal"></i> reservas@tukasa.com</li>
                 </ul>
             </div>
@@ -545,6 +550,31 @@
                     <button class="bg-tukasa-clay px-4 py-2 text-white hover:bg-opacity-90"><i class="fas fa-paper-plane"></i></button>
                 </div>
             </div>
+        </div>
+         <!-- Sección de Redes Sociales -->
+        <div class="mt-8 pt-8 border-t border-gray-800">
+             <div class="flex justify-center space-x-6">
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/51999636537" target="_blank" class="text-gray-400 hover:text-[#25D366] transition transform hover:scale-110" title="WhatsApp">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                    </a>
+                    <!-- Facebook (si tienes enlace, ponlo en href, si no déjalo #) -->
+                    <a href="#" target="_blank" class="text-gray-400 hover:text-[#1877F2] transition transform hover:scale-110" title="Facebook">
+                        <i class="fab fa-facebook text-2xl"></i>
+                    </a>
+                    <!-- Instagram (Reemplaza TU_USUARIO por tu usuario real) -->
+                    <a href="https://instagram.com/TU_USUARIO" target="_blank" class="text-gray-400 hover:text-[#E4405F] transition transform hover:scale-110" title="Instagram">
+                         <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <!-- TikTok (Reemplaza TU_USUARIO por tu usuario real) -->
+                    <a href="https://tiktok.com/@TU_USUARIO" target="_blank" class="text-gray-400 hover:text-white transition transform hover:scale-110" title="TikTok">
+                         <i class="fab fa-tiktok text-2xl"></i>
+                    </a>
+                    <!-- YouTube (Reemplaza TU_USUARIO por tu usuario real) -->
+                    <a href="https://youtube.com/@TU_USUARIO" target="_blank" class="text-gray-400 hover:text-[#FF0000] transition transform hover:scale-110" title="YouTube">
+                         <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+             </div>
         </div>
         <div class="border-t border-gray-800 mt-16 pt-8 text-center text-xs text-gray-500">
             &copy; 2026 TuKasa Boutique Libertad. Todos los derechos reservados.
