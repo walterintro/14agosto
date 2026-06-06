@@ -174,3 +174,34 @@ footer {
     transform: scale(1.1);
     color: #fff;
 }
+/* ========================================= */
+/* ANIMACIÓN CARRUSEL DE RESEÑAS (NUEVO)     */
+/* ========================================= */
+
+@keyframes scroll-left {
+    0% { 
+        transform: translateX(0); 
+    }
+    100% { 
+        /* Mueve el contenido hacia la izquierda la mitad de su ancho total 
+           (asumiendo que duplicaste las tarjetas en HTML para el efecto infinito) */
+        transform: translateX(-50%); 
+    }
+}
+
+.animate-scroll {
+    display: flex;
+    gap: 1.5rem; /* Equivalente a space-x-6 */
+    width: max-content; /* Asegura que el contenedor mida lo que miden sus hijos */
+    animation: scroll-left 40s linear infinite;
+}
+
+/* Pausar la animación cuando el usuario pasa el mouse por encima */
+.animate-scroll:hover {
+    animation-play-state: paused;
+}
+
+/* Ajuste específico para asegurar que funcione dentro de la sección de reseñas */
+#reviews .flex.animate-scroll {
+    animation: scroll-left 40s linear infinite;
+}
