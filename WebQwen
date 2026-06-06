@@ -534,9 +534,11 @@
                 <h4 class="uppercase tracking-widest text-xs font-bold mb-6 text-tukasa-clay">Contacto</h4>
                 <ul class="space-y-3 text-sm text-gray-300">
                     <li>
-                         <a href="https://www.google.com/maps/search/?api=1&query=Jr.+Libertad+938+Ayacucho" target="_blank" class="hover:text-white transition flex items-center">
-                            <i class="fas fa-map-marker-alt mr-2 text-tukasa-teal"></i> 
-                            Jr. Libertad 938, Ayacucho
+                         <a href="https://www.google.com/maps/place/TuKasa+-+Boutique+Libertad+-+Hospedaje/@-13.1550822,-74.2278085,21z/data=!4m18!1m8!3m7!1s0x91127df1b3a8c88f:0xab3f80be9383772e!2sJir%C3%B3n+Libertad+938,+Ayacucho+05003,+Per%C3%BA!3b1!8m2!3d-13.155153!4d-74.2276875!16s%2Fg%2F11nnkpsldj!3m8!1s0x91127df1b30706b9:0xf1f2dedb170033ee!5m2!4m1!1i2!8m2!3d-13.155153!4d-74.227687!16s%2Fg%2F11n4v444cs?entry=ttu&g_ep=EgoyMDI2MDYwMS4wIKXMDSoASAFQAw%3D%3D" 
+                            target="_blank" 
+                            class="hover:text-white transition flex items-center">
+                              <i class="fas fa-map-marker-alt mr-2 text-tukasa-teal"></i> 
+                              Jr. Libertad 938, Ayacucho (Ver Reseñas)
                          </a>
                     </li>
                     <li><i class="fas fa-phone mr-2 text-tukasa-teal"></i> +51 999 636 537</li>
