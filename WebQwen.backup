@@ -590,8 +590,124 @@
         <i class="fab fa-whatsapp"></i>
     </button>
 
+    <script>
+        // Toggle Sections Logic
+        function toggleSection(sectionId, btnId) {
+            const section = document.getElementById(sectionId);
+            const btn = document.getElementById(btnId);
+            
+            if (section.classList.contains('hidden')) {
+                section.classList.remove('hidden');
+                // Re-trigger fade-in animation for new elements
+                const newElements = section.querySelectorAll('.fade-in');
+                newElements.forEach(el => {
+                    el.style.animation = 'none';
+                    el.offsetHeight; /* trigger reflow */
+                    el.style.animation = null; 
+                });
+                btn.innerHTML = 'Ver menos opciones <i class="fas fa-chevron-up ml-2"></i>';
+            } else {
+                section.classList.add('hidden');
+                btn.innerHTML = 'Ver más opciones <i class="fas fa-chevron-down ml-2"></i>';
+                // Optional: scroll back to the top of the section smoothly
+                const sectionParent = section.closest('section');
+                if(sectionParent) {
+                    sectionParent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        }
 
-    <!-- JavaScript externo optimizado -->
-    <script src="app.js" defer></script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.remove('bg-transparent', 'text-white', 'py-6');
+                navbar.classList.add('bg-white', 'text-tukasa-text', 'shadow-md', 'py-4');
+            } else {
+                navbar.classList.add('bg-transparent', 'text-white', 'py-6');
+                navbar.classList.remove('bg-white', 'text-tukasa-text', 'shadow-md', 'py-4');
+            }
+        });
+
+        // Horizontal Scroll Logic for Rooms
+        const scrollContainer = document.getElementById('roomContainer');
+        const btnLeft = document.getElementById('scrollLeft');
+        const btnRight = document.getElementById('scrollRight');
+
+        btnLeft.addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: -350, behavior: 'smooth' });
+        });
+
+        btnRight.addEventListener('click', () => {
+            scrollContainer.scrollBy({ left: 350, behavior: 'smooth' });
+        });
+
+        // Drag to Scroll Logic (Mouse)
+        let isDown = false;
+        let startX;
+        let scrollLeftPos;
+
+        scrollContainer.addEventListener('mousedown', (e) => {
+            isDown = true;
+            scrollContainer.classList.add('cursor-grabbing');
+            scrollContainer.classList.remove('cursor-grab');
+            startX = e.pageX - scrollContainer.offsetLeft;
+            scrollLeftPos = scrollContainer.scrollLeft;
+        });
+
+        scrollContainer.addEventListener('mouseleave', () => {
+            isDown = false;
+            scrollContainer.classList.remove('cursor-grabbing');
+            scrollContainer.classList.add('cursor-grab');
+        });
+
+        scrollContainer.addEventListener('mouseup', () => {
+            isDown = false;
+            scrollContainer.classList.remove('cursor-grabbing');
+            scrollContainer.classList.add('cursor-grab');
+        });
+
+        scrollContainer.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - scrollContainer.offsetLeft;
+            const walk = (x - startX) * 2;
+            scrollContainer.scrollLeft = scrollLeftPos - walk;
+        });
+
+        // WhatsApp Modal Logic
+        function openWaModal(topic) {
+            const modal = document.getElementById('wa-modal');
+            modal.classList.remove('hidden');
+            if(topic) {
+                const select = document.getElementById('wa-topic');
+                for(let i=0; i<select.options.length; i++) {
+                    if(select.options[i].value === topic) {
+                        select.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
+
+        function closeWaModal() {
+            document.getElementById('wa-modal').classList.add('hidden');
+        }
+
+        function sendToWhatsapp(e) {
+            e.preventDefault();
+            const name = document.getElementById('wa-name').value;
+            const phone = document.getElementById('wa-phone').value;
+            const topic = document.getElementById('wa-topic').value;
+            
+            const hotelNumber = "51999888777"; 
+            
+            const message = `Hola TuKasa, mi nombre es ${name}. Mi número es ${phone}. Motivo: ${topic}.`;
+            const url = `https://wa.me/${hotelNumber}?text=${encodeURIComponent(message)}`;
+            
+            window.open(url, '_blank');
+            closeWaModal();
+        }
+    </script>
 </body>
 </html>
